@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FeedlyBackgroundTab Options</title>
+    <style>
+        body {
+            font-family: tahoma, verdana, arial, sans-serif;
+            color: #444;
+            background: #ccc;
+            font-size: 75%;
+        }
+        input {
+            border: 3px solid #ccc;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            cursor: pointer;
+            color: #444;
+        }
+        button:hover {
+            color: #000;
+        }
+        #fbt_container {
+            width: 370px;
+            margin: auto;
+            border: 1px solid #aaa;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        #fbt_container h1 {
+            margin-top: 0px;
+        }
+        #fbt_shortcutkey {
+            width: 20px;
+            padding: 3px 5px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fbt_status {
+            font-weight: bold;
+            border: 1px solid;
+            padding: 4px;
+            display: none;
+        }
+        #fbt_status.showstatus {
+            margin-top: 5px;
+            display: block;
+        }
+        .success {
+            background: #7f7;
+            border-color: #5f5;
+        }
+        .failure {
+            background: #f77;
+            border-color: #f55;
+        }
+    </style>
+</head>
+<body>
+    <div id="fbt_container">
+        <h1>FeedlyBackgroundTab Chrome Extension Options</h1>
+        <p>The following settings are used to modify the behavior of this extension.  Please click <strong>save</strong> when you have finished changing your settings.</p>
+        <div>
+            <label for="fbt_shortcutkey">Shortcut key:</label>
+            <input type="text" maxlength="1" id="fbt_shortcutkey">
+        </div>
+        <div>
+            <button id="fbt_submitbutton">Save</button>
+        </div>
+        <div>
+            <div id="fbt_status"></div>
+        </div>
+    </div>
+    <script src="js/options.js"></script>
+</body>
+</html>

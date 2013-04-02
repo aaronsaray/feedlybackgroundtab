@@ -19,3 +19,14 @@ chrome.extension.onMessage.addListener(
 		});
 	}
 );
+
+/**
+ * Notify users of updates/installed versions
+ */
+chrome.runtime.onInstalled.addListener(function(details) {
+	if (details.reason == 'update') {
+		chrome.tabs.create({
+            url: 'data:text/html,<h1>FeedlyBackgroundTab Updated!</h1><p>Feedly Background Tab has been updated.  Please check the <a href="https://chrome.google.com/webstore/detail/feedly-background-tab/gjlijkhcebalcchkhgaiflaooghmoegk">extension page</a> for more information.</p>'
+        });
+	}
+});
