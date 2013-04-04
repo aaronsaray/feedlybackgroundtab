@@ -8,7 +8,7 @@
 	 * The selector used to find the URL
 	 * @type {string}
 	 */
-	const URL_SELECTOR = 'table.selectedEntry a.title';
+	const URL_SELECTOR = '.selectedEntry a.title';
 
 	/**
 	 * Main feedlybackgroundtab constructor

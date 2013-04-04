@@ -9,6 +9,8 @@ Want to change your shortcut key?  Simply visit the options page.
 
 Changelog
 ---
+0.3
+* modified the selector to pick the current article to include full article view
 
 0.2
 * allowed users to change their shortcut key in options
