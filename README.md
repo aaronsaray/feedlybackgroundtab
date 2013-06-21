@@ -9,6 +9,9 @@ Want to change your shortcut key?  Simply visit the options page.
 
 Changelog
 ---
+04.
+* works on cloudly.feedly now too
+
 0.3
 * modified the selector to pick the current article to include full article view
 
