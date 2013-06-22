@@ -9,7 +9,7 @@ Want to change your shortcut key?  Simply visit the options page.
 
 Changelog
 ---
-04.
+0.4
 * works on cloudly.feedly now too
 
 0.3
