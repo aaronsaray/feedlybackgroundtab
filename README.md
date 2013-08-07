@@ -9,6 +9,9 @@ Want to change your shortcut key?  Simply visit the options page.
 
 Changelog
 ---
+0.5
+* works for Feedly Pro
+
 0.4
 * works on cloudly.feedly now too
 
