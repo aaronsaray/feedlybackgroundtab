@@ -5,7 +5,7 @@
 	"description": "Open Feedly Links in Background Tab using shortcut key",
 	"content_scripts": [
 		{
-			"matches": ["http://www.feedly.com/*", "http://cloud.feedly.com/*", "https://cloud.feedly.com/*"],
+			"matches": ["http://www.feedly.com/*", "http://cloud.feedly.com/*", "https://cloud.feedly.com/*", "http://feedly.com/*", "https://feedly.com/*"],
 			"js": ["js/keypress.js"]
 		}
 	],
