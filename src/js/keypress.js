@@ -41,11 +41,25 @@
 		 */
 		this.keyPressHandler = function(e) {
 			var tag = e.target.tagName.toLowerCase();
+			console.log('Tag: ' + tag);
 			if (tag != 'input' && tag != 'textarea') {
 				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
 					var url = document.querySelector(URL_SELECTOR);
 					if (url) {
+						console.log("before send message...");
 						chrome.extension.sendMessage({url: url.href});
+						console.log("and it was sent right then and there");
+					}
+					else {
+						console.log("Could not find " + URL_SELECTOR);
+					}
+				}
+				else {
+					if (e.altKey) {
+						console.log("Didn't do it cuz alt key");
+					}
+					if (e.ctrlKey) {
+						console.log("Didn't do it cuz ctrl key");
 					}
 				}
 			}
