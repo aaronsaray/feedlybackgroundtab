@@ -5,10 +5,14 @@
  */
 (function(){
 	/**
-	 * The selector used to find the URL
-	 * @type {string}
+	 * The selectors used to find the URL
+	 * @type {array}
 	 */
-	const URL_SELECTOR = '.selectedEntry a.title';
+    var selectors = [
+        '.selectedEntry a.title', // the single list /i/latest
+        'a.websiteCallForAction', // home page, card view popup launch (visit website button)
+    ];
+	const LIST_VIEW_URL_SELECTOR = '.selectedEntry a.title';
 
 	/**
 	 * Main feedlybackgroundtab constructor
@@ -43,10 +47,13 @@
 			var tag = e.target.tagName.toLowerCase();
 			if (tag != 'input' && tag != 'textarea') {
 				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
-					var url = document.querySelector(URL_SELECTOR);
+					var url = document.querySelector(selectors.join());
 					if (url) {
 						chrome.extension.sendMessage({url: url.href});
 					}
+                    else {
+                        console.log("Could not find " + selectors.join());
+                    }
 				}
 			}
 		}

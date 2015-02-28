@@ -9,6 +9,9 @@ Want to change your shortcut key?  Simply visit the options page.
 
 Changelog
 ---
+0.7
+* now works with the popup card views
+
 0.6
 * works on all Feedly URL schemes
 
