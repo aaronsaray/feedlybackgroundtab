@@ -9,6 +9,9 @@ Want to change your shortcut key?  Simply visit the options page.
 
 Changelog
 ---
+0.8
+* fixed issue where it was breaking for some users - but kept card-view compat
+
 0.7
 * now works with the popup card views
 

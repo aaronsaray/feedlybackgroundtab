@@ -47,12 +47,18 @@
 			var tag = e.target.tagName.toLowerCase();
 			if (tag != 'input' && tag != 'textarea') {
 				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
-					var url = document.querySelector(selectors.join());
+                    var url;
+                    for (var x in selectors) {
+                        url = document.querySelector(selectors[x]);
+                        if (url) {
+                            break;
+                        }
+                    }
 					if (url) {
 						chrome.extension.sendMessage({url: url.href});
 					}
                     else {
-                        console.log("Could not find " + selectors.join());
+                        console.log("Could not find any selectors from: " + selectors.join());
                     }
 				}
 			}
