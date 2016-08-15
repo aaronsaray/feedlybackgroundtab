@@ -9,10 +9,10 @@
 	 * @type {array}
 	 */
     var selectors = [
-        '.selectedEntry a.title', // the single list /i/latest
-        'a.websiteCallForAction', // home page, card view popup launch (visit website button)
+        '.selected a.title', // the single list /i/latest
+        'a.visitWebsiteButton', // home page, card view popup launch (visit website button)
     ];
-	const LIST_VIEW_URL_SELECTOR = '.selectedEntry a.title';
+	const LIST_VIEW_URL_SELECTOR = '.selected a.title';
 
 	/**
 	 * Main feedlybackgroundtab constructor
