@@ -9,8 +9,14 @@ After installing this extension, when looking at an article in list view, simply
 
 Want to change your shortcut key?  Simply visit the options page.
 
+**Want to donate or show your appreciation?**  Check out my [Kiva.org Team Page](https://www.kiva.org/team/aaron_saray_open_source_software_team) and join the team.
+This isn't a donation - it's a loan from you to those in need.  You get paid back - continue the cycle to help support people in need.
+
 Changelog
 ---
+0.9
+* Feedly changed their HTML - so updating the selectors (thanks @bval for help)
+
 0.8
 * fixed issue where it was breaking for some users - but kept card-view compat
 
