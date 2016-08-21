@@ -9,7 +9,8 @@
 	 * @type {array}
 	 */
     var selectors = [
-		'a.visitWebsiteButton'	// the button square button
+		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
+		'a.visitWebsiteButton'	// the floating one for card view 
     ];
 	
 	/**

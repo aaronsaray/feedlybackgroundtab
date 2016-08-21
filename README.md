@@ -14,6 +14,9 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 
 Changelog
 ---
+0.10
+* For some instances, the 0.9 fix wasn't working.  Did a fallback for a fix that hopefully fixes this issue
+
 0.9
 * Feedly changed their HTML - so updating the selectors (thanks @bval for help)
 
