@@ -14,6 +14,9 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 
 Changelog
 ---
+0.11
+* Fix for scenarios I hadn't thought of - like non-expanded article.  Thanks @BrianCS
+
 0.10
 * For some instances, the 0.9 fix wasn't working.  Did a fallback for a fix that hopefully fixes this issue
 
