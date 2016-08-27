@@ -9,6 +9,7 @@
 	 * @type {array}
 	 */
     var selectors = [
+    	        'div.selectedEntry a.title',	// title bar for active entry, collapsed or expanded
 		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
 		'a.visitWebsiteButton'	// the floating one for card view 
     ];
