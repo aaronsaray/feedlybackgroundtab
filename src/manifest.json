@@ -1,6 +1,6 @@
 {
 	"name": "Feedly Background Tab",
-	"version": "0.11",
+	"version": "0.12",
 	"manifest_version": 2,
 	"description": "Open Feedly Links in Background Tab using shortcut key",
 	"content_scripts": [

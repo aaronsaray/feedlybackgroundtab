@@ -14,6 +14,9 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 
 Changelog
 ---
+0.12
+* Fix for React-based layouts.  Thanks @BrianCS
+
 0.11
 * Fix for scenarios I hadn't thought of - like non-expanded article.  Thanks @BrianCS
 
