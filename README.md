@@ -13,7 +13,10 @@ Want to change your shortcut key?  Simply visit the options page.
 This isn't a donation - it's a loan from you to those in need.  You get paid back - continue the cycle to help support people in need.
 
 Changelog
----
+---------
+0.13
+* Fix for another style change.  Thanks @hudochenkov
+
 0.12
 * Fix for React-based layouts.  Thanks @BrianCS
 
