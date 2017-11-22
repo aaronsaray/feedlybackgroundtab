@@ -8,13 +8,13 @@
 	 * The selectors used to find the URL
 	 * @type {array}
 	 */
-    var selectors = [
+	var selectors = [
 		'div.selectedEntry a.title',			// title bar for active entry, collapsed or expanded
 		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
 		'.list-entries .selected a.visitWebsiteButton',	// the button square button on list view
 		'a.visitWebsiteButton',					// the floating one for card view
 		'.entry.selected a.title'				// title bar for active entry in React-based collapsed list view
-    ];
+	];
 	
 	/**
 	 * Main feedlybackgroundtab constructor
@@ -49,19 +49,19 @@
 			var tag = e.target.tagName.toLowerCase();
 			if (tag != 'input' && tag != 'textarea') {
 				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
-                    var url;
-                    for (var x in selectors) {
-                        url = document.querySelector(selectors[x]);
-                        if (url) {
-                            break;
-                        }
-                    }
+					var url;
+					for (var x in selectors) {
+						url = document.querySelector(selectors[x]);
+						if (url) {
+							break;
+						}
+					}
 					if (url) {
 						chrome.extension.sendMessage({url: url.href});
 					}
-                    else {
-                        console.log("Could not find any selectors from: " + selectors.join());
-                    }
+					else {
+						console.log("Could not find any selectors from: " + selectors.join());
+					}
 				}
 			}
 		}

@@ -34,8 +34,8 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		}
 		if (url) {
 			chrome.tabs.create({
-	            url: url
-	        });
+							url: url
+					});
 		}
 	}
 });
