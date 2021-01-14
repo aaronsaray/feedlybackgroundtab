@@ -9,13 +9,14 @@
 	 * @type {array}
 	 */
     var selectors = [
+    'div.content a.entry__title',     // MCE 2020-01-14 Modified for Feedly content changes
 		'div.selectedEntry a.title',			// title bar for active entry, collapsed or expanded
 		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
 		'.list-entries .selected a.visitWebsiteButton',	// the button square button on list view
 		'a.visitWebsiteButton',					// the floating one for card view
 		'.entry.selected a.title'				// title bar for active entry in React-based collapsed list view
     ];
-	
+
 	/**
 	 * Main feedlybackgroundtab constructor
 	 */
