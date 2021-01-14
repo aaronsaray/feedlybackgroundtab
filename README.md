@@ -12,6 +12,9 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 
 Changelog
 ---------
+0.13a
+* New selector for recent Feedly website changes to allow operation on unopened links. (MCE forked version)
+
 0.13
 * Fix for another style change.  Thanks @hudochenkov
 
