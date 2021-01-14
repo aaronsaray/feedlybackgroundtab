@@ -12,7 +12,7 @@
 		'.list-entries .entry--selected a.entry__title',     // Additional selector for recent Feedly changes
 		'div.selectedEntry a.title',			// title bar for active entry, collapsed or expanded
 		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
-    '.list-entries .inlineFrame--selected a.visitWebsiteButton',	// (modified @huduchenkov selector) the button square button on list view
+		'.list-entries .inlineFrame--selected a.visitWebsiteButton',	// (modified @huduchenkov selector) the button square button on list view
 		'a.visitWebsiteButton',					// the floating one for card view
 		'.entry.selected a.title'				// title bar for active entry in React-based collapsed list view
     ];
