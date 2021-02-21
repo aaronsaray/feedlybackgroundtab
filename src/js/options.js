@@ -13,13 +13,13 @@
 	 * @todo figure out how to not refer to the querySelector so many times in the code
 	 */
 	function FBT_Options() {
-
 		/**
 		 * Validation messages
 		 */
 		var _messages = {
 			success: 'Options saved successfully.',
-			validateFailure: 'Please choose a shortcut key.'
+			keyValidateFailure: 'Please choose a shortcut key.',
+			selectorValidateFailure: 'Correct the CSS selector.',
 		};
 
 		/**
@@ -51,11 +51,12 @@
 		 * @private
 		 */
 		var _restoreOptions = function() {
-			chrome.storage.sync.get('shortcutKey', function(settings) {
+			chrome.storage.sync.get(['shortcutKey', 'selector'], function(settings) {
 				if (!settings.shortcutKey) {
 					settings.shortcutKey = _defaultShortcutKey;
 				}
 				document.querySelector('#fbt_shortcutkey').value = settings.shortcutKey;
+				document.querySelector('#fbt_selector').value = settings.selector ?? '';
 			});
 		};
 
@@ -64,10 +65,20 @@
 		 * @private
 		 */
 		var _validateAndSave = function() {
-			var key = document.querySelector('#fbt_shortcutkey');
-			if (key.value == '') {
-				_updateStatus(_messages.validateFailure, _messageTypes.failure);
+			var shortcutKey = document.querySelector('#fbt_shortcutkey');
+			if (shortcutKey.value == '') {
+				_updateStatus(_messages.keyValidateFailure, _messageTypes.failure);
 				return false;
+			}
+
+			const cssSelector = document.querySelector('#fbt_selector').value;
+			if( cssSelector !== '' ) {
+				try {
+					document.querySelector(cssSelector);
+				} catch {
+					_updateStatus(_messages.selectorValidateFailure, _messageTypes.failure)
+					return false;
+				}
 			}
 
 			_save();
@@ -80,9 +91,17 @@
 		 */
 		var _save = function() {
 			var shortcutKey = document.querySelector('#fbt_shortcutkey').value;
-			chrome.storage.sync.set({'shortcutKey': shortcutKey}, function () {
-				_updateStatus(_messages.success, _messageTypes.success);
-			});
+			const selector = document.querySelector('#fbt_selector').value;
+			
+			chrome.storage.sync.set(
+				{
+					shortcutKey,
+					selector,
+				},
+				function () {
+					_updateStatus(_messages.success, _messageTypes.success);
+				}
+			);
 		};
 
 		/**

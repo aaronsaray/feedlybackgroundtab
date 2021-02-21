@@ -3,18 +3,20 @@
  *
  * @author Aaron Saray (http://aaronsaray.com)
  */
+
 (function(){
 	/**
 	 * The selectors used to find the URL
 	 * @type {array}
 	 */
-    var selectors = [
+	var selectors = [
 		'div.selectedEntry a.title',			// title bar for active entry, collapsed or expanded
 		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
 		'.list-entries .selected a.visitWebsiteButton',	// the button square button on list view
 		'a.visitWebsiteButton',					// the floating one for card view
-		'.entry.selected a.title'				// title bar for active entry in React-based collapsed list view
-    ];
+		'.entry.selected a.title',				// title bar for active entry in React-based collapsed list view
+		'.entry--selected .entry__title', // 2021 Block-Element-Modifier class syntax update
+	];
 	
 	/**
 	 * Main feedlybackgroundtab constructor
@@ -27,17 +29,26 @@
 		 * @private
 		 */
 		var _triggerKeyCode = 59;
+		var selectorSet = ''
 
 		/**
 		 * Used to create the default key code from local storage
 		 * Also modifies the help popup
 		 */
 		this.init = function() {
-			chrome.storage.sync.get('shortcutKey', function(settings) {
-				if (settings.shortcutKey) {
-					_triggerKeyCode = settings.shortcutKey.charCodeAt(0);
+			selectorSet = selectors.join();
+
+			chrome.storage.sync.get(
+				['shortcutKey', 'selector'],
+				function(settings) {
+					if (settings.shortcutKey) {
+						_triggerKeyCode = settings.shortcutKey.charCodeAt(0);
+					}
+					if (settings.selector) {
+						selectorSet += `,${settings.selector}`;
+					}
 				}
-			});
+			);
 		};
 
 		/**
@@ -46,24 +57,27 @@
 		 * @param e
 		 */
 		this.keyPressHandler = function(e) {
-			var tag = e.target.tagName.toLowerCase();
-			if (tag != 'input' && tag != 'textarea') {
-				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
-                    var url;
-                    for (var x in selectors) {
-                        url = document.querySelector(selectors[x]);
-                        if (url) {
-                            break;
-                        }
-                    }
-					if (url) {
-						chrome.extension.sendMessage({url: url.href});
-					}
-                    else {
-                        console.log("Could not find any selectors from: " + selectors.join());
-                    }
-				}
+			if ( e.keyCode != _triggerKeyCode) {
+				return
 			}
+
+			var tag = e.target.tagName.toLowerCase();
+			if (tag == 'input' || tag == 'textarea') {
+				return;
+			}
+
+			if (e.altKey || e.ctrlKey ) {
+				return
+			}
+
+			const found = document.querySelector(selectorSet);
+
+			if( !found ) {
+				console.log("Could not find any selectors from: " + selectorSet);
+				return;
+			}
+
+			chrome.extension.sendMessage({url: found.href});
 		}
 	};
 
