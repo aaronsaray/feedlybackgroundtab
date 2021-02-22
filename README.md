@@ -13,7 +13,7 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 Changelog
 ---------
 0.14
-* Fix for new CSS classes. Adds 'additional selectors' option to support quick fixes for future Feedly markup changes (@bbbrrriiiaaannn)
+* Fix for new CSS classes. Adds 'additional selectors' option to support quick fixes for future Feedly markup changes.  Thanks @bbbrrriiiaaannn, @henley-regatta, @hudochenkov!
 
 0.13
 * Fix for another style change.  Thanks @hudochenkov
