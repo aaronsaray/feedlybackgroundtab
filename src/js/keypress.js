@@ -51,12 +51,18 @@
 			if (tag != 'input' && tag != 'textarea') {
 				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
                     var url;
-                    for (var x in selectors) {
-                        url = document.querySelector(selectors[x]);
-                        if (url) {
-                            break;
-                        }
-                    }
+					let visitButton = document.activeElement.querySelector('a.visitWebsiteButton');
+
+					if (document.activeElement.classList.contains('InlineArticle') && visitButton) {
+						url = visitButton;
+					} else {
+						for (var x in selectors) {
+							url = document.querySelector(selectors[x]);
+							if (url) {
+								break;
+							}
+						}
+					}
 					if (url) {
 						chrome.extension.sendMessage({url: url.href});
 					}

@@ -12,6 +12,8 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 
 Changelog
 ---------
+0.13b
+* Local update based on @hudochenkov modifications to `keypress.js`, experimental update to manifest v3 (no idea whether that'll work)
 0.13a
 * New selector for recent Feedly website changes to allow operation on unopened links. (MCE forked version, incorporates @hudochenkov fixes as well.)
 
