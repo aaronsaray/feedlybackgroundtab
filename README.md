@@ -12,6 +12,17 @@ This isn't a donation - it's a loan from you to those in need.  You get paid bac
 
 Changelog
 ---------
+0.13.2 
+* Fixed selector - list selected article now has distinctive `id` value, use that. 
+* Revert manifest update; not looking at `background_service_worker` stuff for this.
+* Also hadn't appreciated chrome extensions need fully-numeric version numbers.
+
+0.13b
+* Local update based on @hudochenkov modifications to `keypress.js`, experimental update to manifest v3 (no idea whether that'll work)
+
+0.13a
+* New selector for recent Feedly website changes to allow operation on unopened links. (MCE forked version, incorporates @hudochenkov fixes as well.)
+
 0.13
 * Fix for another style change.  Thanks @hudochenkov
 
