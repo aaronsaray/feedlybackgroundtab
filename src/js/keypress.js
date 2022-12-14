@@ -9,6 +9,7 @@
 	 * @type {array}
 	 */
     var selectors = [
+		'#EntryTitleLink-selected',				// 2022-12-14 latest update required for ListView changes - active link now has this ID
 		'.list-entries .entry--selected a.entry__title',     // Additional selector for recent Feedly changes
 		'div.selectedEntry a.title',			// title bar for active entry, collapsed or expanded
 		'.selectedEntry a.visitWebsiteButton',	// the button square button on list view
@@ -52,7 +53,6 @@
 				if ((!e.altKey && !e.ctrlKey) && e.keyCode == _triggerKeyCode) {
                     var url;
 					let visitButton = document.activeElement.querySelector('a.visitWebsiteButton');
-
 					if (document.activeElement.classList.contains('InlineArticle') && visitButton) {
 						url = visitButton;
 					} else {
